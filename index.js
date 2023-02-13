@@ -33,7 +33,7 @@ else if (process.argv[2] == "list"){
 //     console.log(data);
 //   });
 
-let data=JSON.parse( fs.readFileSync("students.txt",'utf-8'))
+let data=JSON.parse( fs.readFileSync("student12.txt",'utf-8'))
     data.forEach(student => {
         console.log(student.id);
         console.log(student.name);
