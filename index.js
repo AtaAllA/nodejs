@@ -25,14 +25,21 @@ if(process.argv[2]=="add")
 
 else if (process.argv[2] == "list"){
 
-fs.readFile('student12.txt', 'utf8', (err, data) => {
-    if (err) {
-      console.error(err);
-      return;
-    }
-    console.log(data);
-  });
+// fs.readFile('student12.txt', 'utf8', (err, data) => {
+//     if (err) {
+//       console.error(err);
+//       return;
+//     }
+//     console.log(data);
+//   });
 
+let data=JSON.parse( fs.readFileSync("students.txt",'utf-8'))
+    data.forEach(student => {
+        console.log(student.id);
+        console.log(student.name);
+        console.log(student.grade);
+    });
+    fs.writeFileSync("student12.txt",JSON.stringify(data));
 
 }
 
